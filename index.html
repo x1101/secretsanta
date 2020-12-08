@@ -2,7 +2,7 @@
 <html>
     <head>
         <meta charset="utf-8" />
-        <title>Secret Santa Generator</title>
+        <title>Gift Swap Generator</title>
         <script src="vendors/Lodash-3.10.1.js"></script>
         <script src="vendors/Cryptojs.aes-3.1.2.js"></script>
         <script src="./SecretSanta.js"></script>
@@ -13,37 +13,35 @@
         <div class="main">
             <div class="part" style="overflow-y: auto">
                 <div class="instructions">
-                    <h1><img src="assets/mistletoe.png" style="vertical-align: middle" alt="mistletoe" /> Secret Santa Generator</h1>
+                    <h1><img src="assets/mistletoe.png" style="vertical-align: middle" alt="mistletoe" /> Gift Swap Generator</h1>
                     <p>No signup, no email, just a straightforward <a href="https://github.com/x1101/secretsanta">open-source</a> tool to help you generate your gift swap pairings. One static page, and that's it.</p>
                     <p>Enter the name of your guests one line at a time. Once done, press "generate" and you're all set: send the generated links to your guests and their pairing will be revealed to them (and only them) once they open the link.</p>
                 </div>
             </div>
-
             <form id="form" class="part">
                 <textarea id="input" class="input" autofocus></textarea>
                 <button type="submit" class="generate">Generate your pairings</button>
                 <div id="result" class="result none"></div>
             </form>
-
         </div>
 
         <script id="input-placeholder" type="text/placeholder">
             # You can add a user by adding a line
-            Santa
+            Han
 
             # You can add some details if you want to, using parentheses after the name
-            Nicholas (the elf)
+            Leia (the general)
 
             # You can prevent someone from being paired with someone else
-            Maël !Aurélie
-            Aurélie !Maël
+            Chewie !Han
+            Han !Chewie
 
             # You can also exclude someone from being paired with multiple people
             # Careful: too many exclusion rules can make your gift swap less interesting!
-            Rudolph !Santa !Nicholas (the elf)
+            Luke !R2 !Leia (the general)
 
             # You can also cheat a bit and force someone to be paired with another
-            Nicholas (the saint) =Nicholas (the elf)
+            Han  =Leia (the general)
 
             ...
         </script>
