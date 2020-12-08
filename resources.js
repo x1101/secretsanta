@@ -230,3 +230,25 @@ function on_load() {
 
   restore();
 }
+
+function pair_on_load () {
+  var queryString = _.chain( location.search.slice( 1 ).split( /&/g ) )
+      .map( function ( item ) { if ( item ) return item.split( /=/ ).map( function ( str ) { return decodeURIComponent( str ); } ); } )
+      .compact().object().value();
+
+  var name = queryString.name;
+
+  var pairing = CryptoJS.AES.decrypt( queryString.pairing, queryString.key ).toString(CryptoJS.enc.Utf8);
+  var pairingDefinition = pairing.match( /^([^(]+)(?: (\([^)]+\)))?$/ );
+  document.getElementById('pairing-name').innerText = pairingDefinition[1];
+
+  if (pairingDefinition[2]) {
+      document.getElementById('pairing-details').innerText = pairingDefinition[2];
+  } else {
+      document.getElementById('pairing-details').style.display = 'none';
+  }
+}
+
+function get_name() {
+document.getElementById('name').innerText = name;
+}
