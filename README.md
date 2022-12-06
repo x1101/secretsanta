@@ -1,6 +1,6 @@
 # Secret Santa
 
-Check it live on [x1101.github.io/secretsanta/](https://x1101.github.io/secretsanta/).
+Check it live on [x1101.github.io/giftswap/](https://x1101.github.io/giftswap/).
 
 ## License (MIT)
 
